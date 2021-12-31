@@ -1,0 +1,140 @@
+body {
+    background:url("https://wallpaperaccess.com/full/1251284.jpg") no-repeat fixed;
+    background-size:cover;
+    font: 300 18px/18px Roboto;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 800;
+    font-family: montserrat;
+    margin-bottom: 10px;
+    margin-left: -5px;
+    color: #fefefe;
+    text-decoration: underline;
+    text-decoration-color:#474747;
+
+}
+  
+.phone-wrap {
+    z-index: 0;
+    margin: auto;
+    top:15px;
+    width: 300px;
+    height: 534px;
+    overflow: hidden;
+    position: relative;
+    background-position:center;
+    background-size:cover;
+    border-radius:35px;
+    background-color: #121212;
+    border: 5px solid #1b365f;
+    margin-top: 30px;
+}
+  
+.phone {
+    z-index: 1;
+    color: #fff;
+    height: 100%;
+    padding: 15px;
+    position: relative
+}
+
+  
+.screen {
+    top: 3px;
+    left: 20px;
+    position:absolute;
+}
+
+.top {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.play {
+    text-align: justify;
+}
+
+.choose {
+    margin-top: 20px;
+}
+
+.song-title {
+    color: #53565A;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    margin-right: 12px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.part {
+    margin-right: 12px;
+}
+
+.logo {
+    margin-right: 30px;
+}
+
+.info {
+    text-align: justify;
+}
+
+.play-btn {
+    margin-left: 3px;
+    margin-top: 1px;
+}
+
+.title-name {
+    margin-top: 3px;
+    color: white;
+    margin-bottom: -17px;
+    font-size: 18px;
+}
+
+.creator-name {
+    color: #b3b3b3;
+    font-size: 14px;
+    font-weight: 350;
+}
+
+.like {
+    position: absolute;
+    right: 20px;
+    margin-top: 4px;
+}
+
+.ion-android-favorite {
+    color: rgba(227,27,35,1);
+}
+
+.line {
+    margin-top: 40px;
+    margin-right: 25px;
+    border-bottom: 3px solid rgba( 255,255,255,0.8 );
+    cursor: n-resize;
+}
+
+.footer {
+    margin-top: 5px;
+    margin-left: 52px;
+}
+
+.ion-android-arrow-back{
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.ion-android-home {
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.ion-android-apps {
+    cursor: pointer;
+}
