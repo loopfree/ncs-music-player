@@ -132,80 +132,80 @@
 
 <script>
     export default {
-    data () {
-        return {
-            current: {},
-            index: 0,
-            isPlaying: false,
-            songs: [
-                {
-                title: 'Heroes Tonight',
-                artist: 'Janji',
-                src: require('../assets/one.mp3')
-                },
-                {
-                title: 'Adventure',
-                artist: 'JJD',
-                src: require('../assets/two.mp3')
-                },
-                {
-                title: 'Heart A Fire',
-                artist: 'Defqwop',
-                src: require('../assets/three.mp3')
-                }
-            ],
-            player: new Audio()
-        }
-    },
-    methods: {
-        play(song) {
-            this.$emit("goto", 1);
-            if (typeof song.src != "undefined") {
-                this.current = song;
-                this.player.src = this.current.src;
+        data () {
+            return {
+                current: {},
+                index: 0,
+                isPlaying: false,
+                songs: [
+                    {
+                    title: 'Heroes Tonight',
+                    artist: 'Janji',
+                    src: require('../assets/one.mp3')
+                    },
+                    {
+                    title: 'Adventure',
+                    artist: 'JJD',
+                    src: require('../assets/two.mp3')
+                    },
+                    {
+                    title: 'Heart A Fire',
+                    artist: 'Defqwop',
+                    src: require('../assets/three.mp3')
+                    }
+                ],
+                player: new Audio()
             }
+        },
+        methods: {
+            play(song) {
+                this.$emit("goto", 1);
+                if (typeof song.src != "undefined") {
+                    this.current = song;
+                    this.player.src = this.current.src;
+                }
 
-            this.player.play();
-            this.player.volume = 0.1;
+                this.player.play();
+                this.player.volume = 0.2;
 
-            this.player.addEventListener('ended', function () {
+                this.player.addEventListener('ended', function () {
+                    this.index++;
+                    if (this.index > this.songs.length - 1) {
+                    this.index = 0;
+                    }
+                    this.current = this.songs[this.index];
+                    this.play(this.current);
+                }.bind(this));
+                this.isPlaying = true;
+            },
+
+            pause() {
+                this.player.pause();
+                this.isPlaying = false;
+            },
+
+            next() {
                 this.index++;
                 if (this.index > this.songs.length - 1) {
-                this.index = 0;
+                    this.index = 0;
                 }
                 this.current = this.songs[this.index];
                 this.play(this.current);
-            }.bind(this));
-            this.isPlaying = true;
-        },
-
-        pause() {
-            this.player.pause();
-            this.isPlaying = false;
-        },
-
-        next() {
-            this.index++;
-            if (this.index > this.songs.length - 1) {
-                this.index = 0;
+            },
+            
+            prev() {
+                this.index--;
+                if (this.index < 0) {
+                    this.index = this.songs.length - 1;
+                }
+                this.current = this.songs[this.index];
+                this.play(this.current);
             }
-            this.current = this.songs[this.index];
-            this.play(this.current);
         },
-        
-        prev() {
-            this.index--;
-            if (this.index < 0) {
-                this.index = this.songs.length - 1;
-            }
+        created() {
             this.current = this.songs[this.index];
-            this.play(this.current);
+            this.player.src = this.current.src;
         }
-    },
-    created() {
-        this.current = this.songs[this.index];
-        this.player.src = this.current.src;
-    }
     }
 </script>
 
